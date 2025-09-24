@@ -1,0 +1,13 @@
+services:
+  bootdev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: bootdev-dev:latest
+    volumes:
+      - ./code:/workspace
+    working_dir: /workspace
+    stdin_open: true
+    tty: true
+    environment:
+      NVM_DIR: /root/.nvm
