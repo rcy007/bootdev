@@ -11,3 +11,4 @@ services:
     tty: true
     environment:
       NVM_DIR: /root/.nvm
+      GOPROXY: https://goproxy.io,direct
