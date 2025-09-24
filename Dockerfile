@@ -33,7 +33,7 @@ RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | b
 
 RUN bash -lc "source $NVM_DIR/nvm.sh && nvm install $NODE_VERSION_CURRENT && nvm install $NODE_VERSION_LTS && nvm alias default $NODE_VERSION_LTS"
 
-RUN mkdir -p "$GOPATH" && go install github.com/bootdotdev/bootdev@latest
+RUN mkdir -p "$GOPATH" && go install github.com/bootdotdev/bootdev@latest && cp "$GOPATH/bin/bootdev" /usr/local/bin/bootdev
 
 ENTRYPOINT ["bash", "-c", "source $NVM_DIR/nvm.sh && exec \"$@\"", "--"]
 
